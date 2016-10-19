@@ -9,6 +9,7 @@ public class PrimeNumbersV1 {
 
 	public static void main(String[] args) {
 
+		//Version1
 		// Initialization
 		int max = 0;
 		Scanner in = new Scanner(System.in);
@@ -63,6 +64,10 @@ public class PrimeNumbersV1 {
 			System.out.println("Unable to write to file: " + e.getMessage());
 			
 		}
+		
+		//Version2 implementation
+		
+		
 		
 
 	}
