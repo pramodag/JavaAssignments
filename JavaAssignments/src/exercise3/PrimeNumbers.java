@@ -17,14 +17,7 @@ public class PrimeNumbers {
 		int n = 1;
 		String primeFileName = "primeNumbers.txt";
 
-		// Reading user input for max value
-		System.out.println("Please enter number up to which prime numbers needs to be calculated.");
-		try {
-			max = in.nextInt();
-		} catch (NumberFormatException e) {
-			System.out.println("Unable to read user input. Please try again");
-		}
-		in.close();
+//TODO call getinput		
 		a = new boolean[max + 1];
 
 		// Initializing all array elements to true
@@ -33,19 +26,20 @@ public class PrimeNumbers {
 
 		// Calculating prime numbers
 		System.out.println("Prime numbers from 0 to " + max + " :");
-		for (int i = 2; i <= max;) {
+		int k = 2;
+		while (k <= max) {
 			// Adding counter for a new line after 10 numbers.
 			if (n % 10 == 0)
 				System.out.println("");
 			n++;
-			System.out.print(i + " ");
+			System.out.print(k + " ");
 			// Setting all deviser of i to false.
-			for (int j = i + i; j <= max; j = j + i)
+			for (int j = k + k; j <= max; j = j + k)
 				a[j] = false;
 			// ignoring non prime numbers
-			i++;
-			while (i <= max && !a[i])
-				i++;
+			k++;
+			while (k <= max && !a[k])
+				k++;
 		}
 		System.out.println();
 		// Printing prime numbers to file.
