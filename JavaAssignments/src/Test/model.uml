@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:PapyrusJava="http://www.eclipse.org/papyrus/PapyrusJava/1" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML">
+  <uml:Model xmi:id="_10vHoJhnEeawKYB-YWaJKA" name="RectLineClassDiag">
+    <packageImport xmi:type="uml:PackageImport" xmi:id="_5Bc7QJhnEeawKYB-YWaJKA">
+      <importedPackage xmi:type="uml:Profile" href="pathmap://PapyrusJava_PROFILES/PapyrusJava.profile.uml#_j9REUByGEduN1bTiWJ0lyw"/>
+    </packageImport>
+    <packagedElement xmi:type="uml:Package" xmi:id="_NEXP8JhoEeawKYB-YWaJKA" name="Test">
+      <packagedElement xmi:type="uml:Class" xmi:id="_RsXV0JhoEeawKYB-YWaJKA" name="Class1"/>
+      <packagedElement xmi:type="uml:Class" xmi:id="_jVnEcJhoEeawKYB-YWaJKA" name="RectLine">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_vOpH8JhoEeawKYB-YWaJKA" name="CLIPIDENTIFIER" isStatic="true">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </ownedAttribute>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="__MpcwJhoEeawKYB-YWaJKA" name="main" isStatic="true">
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_OS31AJhpEeawKYB-YWaJKA" name="args">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+          </ownedParameter>
+        </ownedOperation>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="__yvzcJhoEeawKYB-YWaJKA" name="start">
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_dSH7MJhsEeawKYB-YWaJKA" name="primaryStage">
+            <type xmi:type="uml:Class" href="pathmap://UML_METAMODELS/UML.metamodel.uml#Class"/>
+          </ownedParameter>
+        </ownedOperation>
+        <nestedClassifier xmi:type="uml:Class" xmi:id="_sWingJhqEeawKYB-YWaJKA" name="TestClass"/>
+        <nestedClassifier xmi:type="uml:Class" xmi:id="_IF8b4JhtEeamZ52wre5TCA" name="EventHandler" visibility="private" isAbstract="true">
+          <ownedOperation xmi:type="uml:Operation" xmi:id="_P5v58JhuEeamZ52wre5TCA" name="handle" visibility="private">
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_YtEwwJhuEeamZ52wre5TCA" name="mouseEvent" visibility="private">
+              <type xmi:type="uml:Class" href="pathmap://UML_METAMODELS/UML.metamodel.uml#Class"/>
+            </ownedParameter>
+          </ownedOperation>
+          <nestedClassifier xmi:type="uml:Class" xmi:id="_d6IEcJhuEeamZ52wre5TCA" name="EventHandler">
+            <ownedOperation xmi:type="uml:Operation" xmi:id="_iWHuoJhuEeamZ52wre5TCA" name="handel" visibility="private">
+              <ownedParameter xmi:type="uml:Parameter" xmi:id="_olVp8JhuEeamZ52wre5TCA" name="mouseEvent" visibility="private">
+                <type xmi:type="uml:Class" href="pathmap://UML_METAMODELS/UML.metamodel.uml#Class"/>
+              </ownedParameter>
+            </ownedOperation>
+          </nestedClassifier>
+        </nestedClassifier>
+      </packagedElement>
+      <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_XAe60JhoEeawKYB-YWaJKA">
+        <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_XAfh4JhoEeawKYB-YWaJKA" source="http://www.eclipse.org/uml2/2.0.0/UML">
+          <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/papyrus/PapyrusJava/1#/"/>
+        </eAnnotations>
+        <appliedProfile xmi:type="uml:Profile" href="pathmap://PapyrusJava_PROFILES/PapyrusJava.profile.uml#_j9REUByGEduN1bTiWJ0lyw"/>
+      </profileApplication>
+    </packagedElement>
+    <profileApplication xmi:type="uml:ProfileApplication" xmi:id="__sZJQJhnEeawKYB-YWaJKA">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="__sblgJhnEeawKYB-YWaJKA" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/papyrus/PapyrusJava/1#/"/>
+      </eAnnotations>
+      <appliedProfile xmi:type="uml:Profile" href="pathmap://PapyrusJava_PROFILES/PapyrusJava.profile.uml#_j9REUByGEduN1bTiWJ0lyw"/>
+    </profileApplication>
+  </uml:Model>
+  <PapyrusJava:NoCodeGen xmi:id="_BzZ5EJhoEeawKYB-YWaJKA" base_element="_10vHoJhnEeawKYB-YWaJKA"/>
+  <PapyrusJava:ExternLibrary xmi:id="_BzxFcJhoEeawKYB-YWaJKA" base_package="_10vHoJhnEeawKYB-YWaJKA"/>
+</xmi:XMI>

@@ -18,6 +18,7 @@ public class PrimeNumbersMethods {
 		System.out.println("Please enter number up to which prime numbers needs to be calculated.");
 		try {
 			max = in.nextInt();
+			in.close();
 		} catch (NumberFormatException e) {
 			System.out.println("Unable to read user input. Please try again");
 			return Integer.MIN_VALUE;
