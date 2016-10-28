@@ -1,4 +1,4 @@
-package exercise3;
+package com.hagenberg.ENI515.exercise3;
 
 import java.util.Scanner;
 
@@ -6,8 +6,8 @@ public class PrimeNumbersMethods {
 
 	public static void main(String[] args) {
 
-		// int max = getInput();
-		int[] primeNumbers = getPrimeNumbers(100);
+		int max = getInput();
+		int[] primeNumbers = getPrimeNumbers(max);
 		print(primeNumbers);
 	}
 
@@ -31,7 +31,6 @@ public class PrimeNumbersMethods {
 		if(max<=0)return null;
 		boolean[] a = new boolean[max + 1];
 		int[] primeNumbersArray = null;
-
 		// Initializing all array elements to true
 		for (int i = 2; i <= max; i++)
 			a[i] = true;
