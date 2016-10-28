@@ -1,4 +1,5 @@
 package com.hagenberg.ENI515.exercise5;
+
 public class Date {
 
 	int date, month, year;
@@ -41,9 +42,12 @@ public class Date {
 		this.year = year;
 	}
 
-	public static int getNoOfDays(int m) {
+	private int getNoOfDays(int m) {
 		switch (m) {
 		case 2:
+			if (isLeapYear(year)) {
+				return 29;
+			}
 			return 28;
 		case 1:
 		case 3:
@@ -65,5 +69,15 @@ public class Date {
 
 	public String toString() {
 		return date + ":" + month + ":" + year;
+	}
+
+	private boolean isLeapYear(int year) {
+		if (year % 400 == 0)
+			return true;
+		if (year % 100 == 0)
+			return false;
+		if (year % 4 == 0)
+			return true;
+		return false;
 	}
 }
