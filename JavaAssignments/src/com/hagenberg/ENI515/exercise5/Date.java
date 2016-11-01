@@ -2,7 +2,7 @@ package com.hagenberg.ENI515.exercise5;
 
 public class Date {
 
-	int date, month, year;
+	private int date, month, year;
 
 	public Date(int date, int month, int year) {
 
