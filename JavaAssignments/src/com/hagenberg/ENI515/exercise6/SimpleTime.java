@@ -80,7 +80,7 @@ public class SimpleTime {
 		SimpleTime t1=new SimpleTime();
 		t1.set(5000);
 		System.out.println(t1);
-		t1.setMode(Mode.AM_PM);
+		t1.setMode(Mode.H24);
 		System.out.println(t1);
 	}
 
