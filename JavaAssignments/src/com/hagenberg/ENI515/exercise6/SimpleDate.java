@@ -105,16 +105,30 @@ public class SimpleDate {
 	}
 	public static void main(String a[]){
 		SimpleDate date=new SimpleDate(28,2,2015);
+		System.out.println("Date initialized: "+date);
 		date.add(33);
-		System.out.println(date);
+		System.out.println("Date after adding 33 days: "+date);
 		date.set(10, 3, 2014);
+		System.out.println("Date2: "+date);
 		date.add(314);
-		System.out.println(date);
+		System.out.println("Date aftre adding 314 days: "+date);
 		SimpleDate date2=new SimpleDate(18,2,2015);
 		if(date.equals(date2)){
 			System.out.println(date +" and "+date2+" are same.");
 		}
 		int y=2014;
 		System.out.println("Is "+y+" a leap year?: "+SimpleDate.isLeapYear(y));
+		date.addMonth(14);
+		System.out.println("Date after adding 14 months: "+date);
 	}
 }
+
+/*Output:
+Date initialized: 28:2:2015
+Date after adding 33 days: 2:4:2015
+Date2: 10:3:2014
+Date aftre adding 314 days: 18:2:2015
+18:2:2015 and 18:2:2015 are same.
+Is 2014 a leap year?: false
+Date after adding 14 months: 18:4:2016
+*/

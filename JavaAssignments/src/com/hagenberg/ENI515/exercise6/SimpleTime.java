@@ -79,9 +79,20 @@ public class SimpleTime {
 
 		SimpleTime t1=new SimpleTime();
 		t1.set(5000);
-		System.out.println(t1);
+		System.out.println("Printing time in default mode: "+t1);
 		t1.setMode(Mode.H24);
-		System.out.println(t1);
+		System.out.println("Printing time in 24 Hour formate:"+t1);
+		SimpleTime t2=new SimpleTime(22, 25, 32);
+		System.out.println("T2: "+t2);
+		t2.add(500);
+		System.out.println("T2 after adding 500 seconds: "+t2);
 	}
 
 }
+
+/*Output:
+	Printing time in default mode: 1:23:20:AM
+	Printing time in 24 Hour formate:1:23:20
+	T2: 10:25:32:PM
+	T2 after adding 500 seconds: 10:33:52:PM
+*/
