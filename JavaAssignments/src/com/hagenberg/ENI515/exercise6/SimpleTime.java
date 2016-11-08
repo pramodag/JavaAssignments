@@ -3,7 +3,8 @@ package com.hagenberg.ENI515.exercise6;
 public class SimpleTime {
 
 	private int h, m, s;
-	private String mode;
+	private static Mode mode;
+	public static enum Mode {AM_PM, H24;}
 
 	public SimpleTime() {
 		init(0, 0, 0);
@@ -17,9 +18,8 @@ public class SimpleTime {
 		if (h < 0 || h > 23)
 			throw new IllegalArgumentException("Invalid hours");
 		this.h = h;
-
 		if (m < 0 || m > 59)
-			throw new IllegalArgumentException("Invalid mins");
+			throw new IllegalArgumentException("Invalid minutes");
 		this.m = m;
 		if (s < 0 || s > 59)
 			throw new IllegalArgumentException("Invalid seconds");
@@ -27,7 +27,7 @@ public class SimpleTime {
 	}
 
 	public String toString() {
-		if (Mode.H24.toString().equals(mode))
+		if (Mode.H24 == mode)
 			return h + ":" + m + ":" + s;
 		if (h > 12)
 			return h % 12 + ":" + m + ":" + s + ":" + "PM";
@@ -52,7 +52,6 @@ public class SimpleTime {
 	}
 
 	public void addHour(int hour) {
-		if (h + hour > 23)
 			h = (h + hour) % 24;
 	}
 
@@ -65,34 +64,20 @@ public class SimpleTime {
 			h = h % 24;
 	}
 
-	public void setMode(Mode m) {
-		mode=m.toString();
+	public static void setMode(Mode m) {
+		mode = m;
 	}
 
 	public boolean equals(SimpleTime t) {
-		if (h == t.h && m == t.m && s == t.s)
-			return true;
-		return false;
+		return h == t.h && m == t.m && s == t.s;
 	}
 
-	public static void main(String[] args) {
-
-		SimpleTime t1=new SimpleTime();
-		t1.set(5000);
-		System.out.println("Printing time in default mode: "+t1);
-		t1.setMode(Mode.H24);
-		System.out.println("Printing time in 24 Hour formate:"+t1);
-		SimpleTime t2=new SimpleTime(22, 25, 32);
-		System.out.println("T2: "+t2);
-		t2.add(500);
-		System.out.println("T2 after adding 500 seconds: "+t2);
-	}
+	
 
 }
 
-/*Output:
-	Printing time in default mode: 1:23:20:AM
-	Printing time in 24 Hour formate:1:23:20
-	T2: 10:25:32:PM
-	T2 after adding 500 seconds: 10:33:52:PM
-*/
+
+/*
+ * Output: Printing time in default mode: 1:23:20:AM Printing time in 24 Hour
+ * formate:1:23:20 T2: 10:25:32:PM T2 after adding 500 seconds: 10:33:52:PM
+ */

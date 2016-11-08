@@ -1,7 +1,7 @@
 package com.hagenberg.ENI515.exercise6;
 
 public class SimpleDate {
-	private int date, month, year;
+	private int day, month, year;
 
 	public SimpleDate() {
 		init(0, 0, 0);
@@ -13,20 +13,22 @@ public class SimpleDate {
 	}
 
 	private void init(int date, int month, int year) {
+		if (year < 0)
+			throw new IllegalArgumentException("Invalid year " + year);
 		this.year = year;
 		if (month > 12 || month < 1)
 			throw new IllegalArgumentException("Invalid month: " + month);
 		this.month = month;
-		if (date > getNoOfDays(month) || date < 1)
+		if (date > getNoOfDays() || date < 1)
 			throw new IllegalArgumentException("Invalid Date: " + date);
-		this.date = date;
+		this.day = date;
 
 	}
 
-	private int getNoOfDays(int month) {
+	private int getNoOfDays() {
 		switch (month) {
 		case 2:
-			if (isLeapYear(year)) {
+			if (isLeapYear()) {
 				return 29;
 			}
 			return 28;
@@ -44,15 +46,27 @@ public class SimpleDate {
 		case 11:
 			return 30;
 		default:
-			return 0;
+			throw new RuntimeException();
 		}
 	}
 
-	public String toString() {
-		return date + ":" + month + ":" + year;
+	public int getDay() {
+		return day;
 	}
 
-	public static boolean isLeapYear(int year) {
+	public int getMonth() {
+		return month;
+	}
+
+	public int getYear() {
+		return year;
+	}
+
+	public String toString() {
+		return day + "." + month + "." + year;
+	}
+
+	public boolean isLeapYear() {
 		if (year % 400 == 0)
 			return true;
 		if (year % 100 == 0)
@@ -62,36 +76,34 @@ public class SimpleDate {
 		return false;
 	}
 
-	public void set(int date, int month, int year) {
-		init(date, month, year);
+	public void set(int day, int month, int year) {
+		init(day, month, year);
 
 	}
 
 	public void add(int days) {
-		if ((date + days) > getNoOfDays(month)) {
-			int d=date+days;
-			while (d> getNoOfDays(month)) {
-				d-= getNoOfDays(month);
+		if ((day + days) > getNoOfDays()) {
+			int d = day + days;
+			while (d > getNoOfDays()) {
+				d -= getNoOfDays();
 				month++;
 				if (month % 12 == 0) {
 					year++;
-					month = 0;
+					month = 1;
 				}
 
 			}
-			date=d;
+			day = d;
 
-		}else{
-			this.date+=days;
+		} else {
+			this.day += days;
 		}
 
 	}
 
-	public void addMonth(int month){
-		if((this.month+month)>12){
-			year+=(this.month+month)/12;
-			this.month=(this.month+month)%12;
-		}
+	public void addMonth(int month) {
+		year += (this.month + month) / 12;
+		this.month = (this.month + month) % 12;
 	}
 
 	public void addYear(int year) {
@@ -99,36 +111,13 @@ public class SimpleDate {
 	}
 
 	public boolean equals(SimpleDate date) {
-		if (this.year == date.year && this.month == date.month && this.date == date.date)
-			return true;
-		return false;
-	}
-	public static void main(String a[]){
-		SimpleDate date=new SimpleDate(28,2,2015);
-		System.out.println("Date initialized: "+date);
-		date.add(33);
-		System.out.println("Date after adding 33 days: "+date);
-		date.set(10, 3, 2014);
-		System.out.println("Date2: "+date);
-		date.add(314);
-		System.out.println("Date aftre adding 314 days: "+date);
-		SimpleDate date2=new SimpleDate(18,2,2015);
-		if(date.equals(date2)){
-			System.out.println(date +" and "+date2+" are same.");
-		}
-		int y=2014;
-		System.out.println("Is "+y+" a leap year?: "+SimpleDate.isLeapYear(y));
-		date.addMonth(14);
-		System.out.println("Date after adding 14 months: "+date);
+		return this.year == date.year && this.month == date.month && this.day == date.day;
 	}
 }
 
-/*Output:
-Date initialized: 28:2:2015
-Date after adding 33 days: 2:4:2015
-Date2: 10:3:2014
-Date aftre adding 314 days: 18:2:2015
-18:2:2015 and 18:2:2015 are same.
-Is 2014 a leap year?: false
-Date after adding 14 months: 18:4:2016
-*/
+/*
+ * Output: Date initialized: 28:2:2015 Date after adding 33 days: 2:4:2015
+ * Date2: 10:3:2014 Date aftre adding 314 days: 18:2:2015 18:2:2015 and
+ * 18:2:2015 are same. Is 2014 a leap year?: false Date after adding 14 months:
+ * 18:4:2016
+ */
