@@ -1,10 +1,10 @@
 package com.hagenberg.ENI515.exercise7;
 
-public class Person {
+public class String {
 
 	String name,address;
 	
-	public Person(String name, String address){
+	public String(String name, String address){
 		this.name=name;
 		this.address=address;
 	}

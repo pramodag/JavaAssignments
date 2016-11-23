@@ -3,15 +3,15 @@ package com.hagenberg.ENI515.exercise7;
 import java.util.Iterator;
 import java.util.NoSuchElementException;
 
-public class PersonQueue implements Iterable<Person> {
-	private Person[] a;
+public class PersonQueue implements Iterable<String> {
+	private String[] a;
 	private int N = 0;
 	private int first = 0;
 	private int last = 0;
 
 	// cast needed since no generic array creation in Java
 	public PersonQueue(int capacity) {
-		a = new Person[capacity];
+		a = new String[capacity];
 	}
 
 	public boolean isEmpty() {
@@ -22,7 +22,7 @@ public class PersonQueue implements Iterable<Person> {
 		return N;
 	}
 
-	public void enqueue(Person person) {
+	public void enqueue(String person) {
 		if (N == a.length) {
 			throw new RuntimeException("Person queue overflow");
 		}
@@ -31,23 +31,23 @@ public class PersonQueue implements Iterable<Person> {
 		N++;
 	}
 
-	public Person dequeue() {
+	public String dequeue() {
 		if (isEmpty()) {
 			throw new RuntimeException("Person queue underflow");
 		}
-		Person item = a[first];
+		String item = a[first];
 		a[first] = null;
 		N--;
 		first = (first + 1) % a.length;
 		return item;
 	}
 
-	public Iterator<Person> iterator() {
+	public Iterator<String> iterator() {
 		return new PersonQueueIterator();
 	}
 
 	// an iterator, doesn't implement remove() since it's optional
-	public class PersonQueueIterator implements Iterator<Person> {
+	public class PersonQueueIterator implements Iterator<String> {
 		private int i = 0;
 
 		public boolean hasNext() {
@@ -58,7 +58,7 @@ public class PersonQueue implements Iterable<Person> {
 			throw new UnsupportedOperationException("Method unimplemented.");
 		}
 
-		public Person next() {
+		public String next() {
 			if (!hasNext())
 				throw new NoSuchElementException();
 			return a[i++];

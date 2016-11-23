@@ -1,10 +1,10 @@
 package com.hagenberg.ENI515.exercise6;
-
 public class SimpleTime {
-
 	private int h, m, s;
 	private static Mode mode;
-	public static enum Mode {AM_PM, H24;}
+	public static enum Mode {
+		AM_PM, H24;
+	}
 
 	public SimpleTime() {
 		init(0, 0, 0);
@@ -51,8 +51,12 @@ public class SimpleTime {
 		add(sec);
 	}
 
+	public void set(int h, int m, int s) {
+		init(h, m, s);
+	}
+
 	public void addHour(int hour) {
-			h = (h + hour) % 24;
+		h = (h + hour) % 24;
 	}
 
 	public void addMin(int min) {
@@ -71,12 +75,7 @@ public class SimpleTime {
 	public boolean equals(SimpleTime t) {
 		return h == t.h && m == t.m && s == t.s;
 	}
-
-	
-
 }
-
-
 /*
  * Output: Printing time in default mode: 1:23:20:AM Printing time in 24 Hour
  * formate:1:23:20 T2: 10:25:32:PM T2 after adding 500 seconds: 10:33:52:PM
